@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from app.core.redis import test_connection
 
 router = APIRouter()
 
@@ -6,9 +7,6 @@ router = APIRouter()
 @router.get("/")
 def get_users():
     return [{"username": "john"}, {"username": "doe"}]
-
-
-from app.core.redis import test_connection
 
 
 @router.get("/redis-test")
